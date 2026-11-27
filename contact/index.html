@@ -37,4 +37,156 @@
       <li><a href="../">Home</a></li><li><a href="../about/">About</a></li>
       <li class="nav-item--has-dropdown"><a href="../services/">Services</a>
         <div class="nav-dropdown" role="menu">
-          <a href="../services
+          <a href="../services/web-digital-experiences/">Web & Digital Experiences</a><a href="../services/graphic-design/">Graphic Design</a>
+          <a href="../services/branding-visual-identity/">Branding & Visual Identity</a><a href="../services/social-media/">Social Media</a>
+          <a href="../services/content-copywriting/">Content & Copywriting</a><a href="../services/digital-products/">Digital Products</a>
+          <a href="../services/creative-media-production/">Creative & Media Production</a><a href="../services/publishing-podcast-projects/">Publishing & Podcast</a>
+        </div></li>
+      <li><a href="../work/">Work</a></li><li><a href="../publishing/">Publishing</a></li><li><a href="../media/">Media</a></li>
+      <li><a href="../hukm-qalbi-ai/">AI</a></li><li><a href="../founder/">Founder</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="./" class="btn btn-primary btn-sm">Start a Project</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menuPanel"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="menu-panel" id="menuPanel" role="dialog" aria-modal="true" aria-label="Menu">
+  <nav>
+    <a href="../">Home</a><a href="../about/">About</a><a href="../vision/">Vision</a><a href="../services/">Services</a>
+    <a href="../work/">Work</a><a href="../publishing/">Publishing</a><a href="../media/">Media</a>
+    <a href="../hukm-qalbi-ai/">Hukm Qalbi AI</a><a href="../founder/">Founder</a><a href="./">Contact</a>
+  </nav>
+  <div class="menu-foot"><span>Hukm Qalbi — Creative Organization</span><span>Founded by Saalim Zayed · 2024</span></div>
+</div>
+
+<main id="main">
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="wrap"><ol><li><a href="../">Home</a></li><li><span aria-current="page">Contact</span></li></ol></div>
+</nav>
+
+<section class="hero hero--page" data-theme="dark">
+  <div class="hero-ambient" aria-hidden="true"><span class="blob blob-a"></span><span class="blob blob-b"></span><span class="blob blob-c"></span></div>
+  <div class="hero-inner" style="text-align:center">
+    <p class="eyebrow eyebrow--hero reveal" style="margin-inline:auto">Start a Project</p>
+    <h1 class="hero-title--page display" style="margin-inline:auto">
+      <span class="mask"><span class="mask-i" style="--d:.10s">Let's build something</span></span>
+      <span class="mask"><span class="mask-i" style="--d:.20s">meaningful.</span></span>
+    </h1>
+    <p class="hero-sub--page reveal" style="--d:.4s;margin-inline:auto">
+      Tell us about the idea. Every inquiry is read personally and answered with a considered point of view.
+    </p>
+  </div>
+</section>
+
+<section class="section section--dark" data-theme="dark">
+  <div class="wrap">
+    <div class="form-card reveal">
+      <form id="inquiryForm" novalidate data-endpoint="">
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-name">Name *</label>
+            <input id="f-name" name="name" type="text" placeholder="Your full name" required autocomplete="name">
+            <span class="field-error">Please enter your name.</span>
+          </div>
+          <div class="field">
+            <label for="f-email">Email *</label>
+            <input id="f-email" name="email" type="email" placeholder="you@company.com" required autocomplete="email">
+            <span class="field-error">Please enter a valid email address.</span>
+          </div>
+          <div class="field">
+            <label for="f-company">Company / Organization</label>
+            <input id="f-company" name="company" type="text" placeholder="Optional" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="f-service">Service Needed</label>
+            <select id="f-service" name="service">
+              <option value="">Select a service</option>
+              <option>Web & Digital Experiences</option>
+              <option>Graphic Design</option>
+              <option>Branding & Visual Identity</option>
+              <option>Social Media</option>
+              <option>Content & Copywriting</option>
+              <option>Digital Products</option>
+              <option>Creative & Media Production</option>
+              <option>Publishing & Podcast Projects</option>
+              <option>Multiple / Not sure yet</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="f-details">Project Details *</label>
+            <textarea id="f-details" name="details" placeholder="What are you building, and what does success look like?" required></textarea>
+            <span class="field-error">Please share a few details about the project.</span>
+          </div>
+          <div class="field">
+            <label for="f-budget">Budget</label>
+            <select id="f-budget" name="budget">
+              <option value="">Select a range</option>
+              <option>Under $2,000</option><option>$2,000 – $5,000</option>
+              <option>$5,000 – $10,000</option><option>$10,000 – $25,000</option>
+              <option>$25,000+</option><option>Retainer / Ongoing</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-timeline">Timeline</label>
+            <select id="f-timeline" name="timeline">
+              <option value="">Select a timeline</option>
+              <option>ASAP</option><option>Within 1 month</option>
+              <option>1 – 3 months</option><option>3 – 6 months</option><option>Flexible</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="f-link">Website / Social Link</label>
+            <input id="f-link" name="link" type="url" placeholder="https://" autocomplete="url">
+          </div>
+          <div class="field full">
+            <label for="f-file">File Upload</label>
+            <div class="file-field" id="fileField">
+              <input id="f-file" name="file" type="file" aria-describedby="fileHelp">
+              <div class="ff-title" id="fileTitle">Drop a brief, deck, or reference</div>
+              <div class="ff-sub" id="fileHelp">PDF, PNG, JPG, or DOCX — up to 20MB</div>
+            </div>
+          </div>
+          <div class="field full">
+            <label for="f-extra">Additional Information</label>
+            <textarea id="f-extra" name="extra" placeholder="Anything else we should know?" style="min-height:100px"></textarea>
+          </div>
+        </div>
+        <div class="form-foot">
+          <p class="form-note">We read every message personally. Most replies come within two business days.</p>
+          <button type="submit" class="btn btn-primary" id="submitBtn">Send Inquiry <span class="arw">→</span></button>
+        </div>
+        <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+      </form>
+      <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+        <div class="success-ring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Thank you — message received.</h3>
+        <p>Your inquiry has been submitted successfully. We'll be in touch with a considered reply.</p>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:40px">
+      <p class="body-text" style="color:rgba(255,255,255,.55);max-width:none;margin-inline:auto">
+        Prefer to reach out directly? Find us on
+        <a href="https://instagram.com/hukmqalbi" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">Instagram</a>,
+        <a href="https://x.com/hukmqalbi" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">X</a>, or
+        <a href="https://linkedin.com/company/hukmqalbi" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">LinkedIn</a>.
+      </p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand"><a class="brand" href="../"><svg class="brand-mark" aria-hidden="true"><use href="#hq-mark"/></svg><span class="brand-text">Hukm Qalbi</span></a><p>A creative organization founded by Saalim Zayed, working across digital experiences, design, publishing, and media.</p></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a href="../about/">About</a></li><li><a href="../vision/">Vision</a></li><li><a href="../services/">Services</a></li><li><a href="../work/">Work</a></li><li><a href="../publishing/">Publishing</a></li><li><a href="../media/">Media</a></li><li><a href="../hukm-qalbi-ai/">Hukm Qalbi AI</a></li><li><a href="../founder/">Founder</a></li><li><a href="./">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="../services/web-digital-experiences/">Web & Digital</a></li><li><a href="../services/branding-visual-identity/">Branding & Identity</a></li><li><a href="../services/content-copywriting/">Content & Copywriting</a></li><li><a href="../services/publishing-podcast-projects/">Publishing & Podcast</a></li><li><a href="../services/creative-media-production/">Creative Production</a></li></ul></div>
+      <div class="footer-col"><h4>Elsewhere</h4><ul><li><a href="https://instagram.com/hukmqalbi" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://facebook.com/hukmqalbi" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://x.com/hukmqalbi" target="_blank" rel="noopener">X / Twitter</a></li><li><a href="https://youtube.com/@hukmqalbi" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://linkedin.com/company/hukmqalbi" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-year>2024</span> Hukm Qalbi. All rights reserved.</span><span class="footer-tag">Founded by Saalim Zayed · 12 February 2024</span></div>
+  </div>
+</footer>
+<script src="../assets/main.js" defer></script>
+</body>
+</html>
