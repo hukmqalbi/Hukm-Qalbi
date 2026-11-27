@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hukmqalbi.github.io/Hukm-Qalbi/sitemap.xml
