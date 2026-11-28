@@ -841,3 +841,103 @@ body.ready .scroll-cue{opacity:1}
 .portrait--photo::after{
   background:linear-gradient(180deg, transparent 55%, rgba(8,8,8,.55) 100%);
 }
+/* Footer (base) */
+.footer{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-block:clamp(52px,7vw,84px) 0;
+  background:var(--black);
+  color:#fff;
+}
+.footer-top{
+  display:grid;
+  grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));
+  gap:clamp(28px,4vw,56px);
+  margin-bottom:clamp(48px,6vw,72px);
+}
+.footer-brand .brand{margin-bottom:18px;color:#fff}
+.footer-brand p{
+  font-size:.88rem;
+  color:rgba(255,255,255,.55);
+  line-height:1.65;
+  max-width:34ch;
+}
+.footer-col h4{
+  font-size:.68rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.42);
+  font-weight:600;
+  margin-bottom:18px;
+}
+.footer-col li+li{margin-top:11px}
+.footer-col a{
+  font-size:.88rem;
+  color:rgba(255,255,255,.75);
+  transition:color .3s var(--ease-soft);
+  display:inline-block;
+}
+.footer-col a:hover{color:#fff}
+.footer-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  padding-top:30px;
+  border-top:1px solid rgba(255,255,255,.08);
+  font-size:.78rem;
+  color:rgba(255,255,255,.42);
+}
+.footer-tag{
+  font-weight:500;
+  letter-spacing:.02em;
+  color:rgba(255,255,255,.7);
+}
+/* ============================================================
+   OVERSIZED WORDMARK FOOTER
+   ============================================================ */
+.footer{padding-bottom:0}
+
+.footer-wordmark{
+  position:relative;
+  margin-top:clamp(56px,8vw,110px);
+  height:clamp(60px, 11vw, 180px);
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  pointer-events:none;
+  user-select:none;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 72%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 72%,transparent 100%);
+}
+.footer-wordmark span{
+  display:block;
+  font-family:var(--font-sans);
+  font-weight:700;
+  font-size:clamp(3.5rem, 18vw, 20rem);
+  letter-spacing:-.06em;
+  line-height:.8;
+  color:#fff;
+  white-space:nowrap;
+  padding-inline:var(--pad);
+  text-align:center;
+  will-change:transform;
+}
+
+@media (max-width:767px){
+  .footer-wordmark{
+    height:auto;
+    overflow:visible;
+    margin-top:clamp(32px,6vw,56px);
+    margin-bottom:clamp(20px,4vw,36px);
+    -webkit-mask-image:none;
+    mask-image:none;
+  }
+  .footer-wordmark span{
+    font-size:clamp(2.6rem, 15vw, 5rem);
+    white-space:normal;
+    line-height:.85;
+    letter-spacing:-.055em;
+  }
+}
