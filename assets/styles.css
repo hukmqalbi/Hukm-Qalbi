@@ -657,58 +657,6 @@ body.ready .scroll-cue{opacity:1}
 .cta-band-inner .btn{position:relative;background:#fff;color:#080808}
 .cta-band-inner .btn:hover{background:#e5e5e5}
 
-/* ============================================================
-   OVERSIZED WORDMARK FOOTER
-   ============================================================ */
-
-/* Remove the footer's own bottom padding so the wordmark sits flush */
-.footer{padding-bottom:0}
-
-.footer-wordmark{
-  position:relative;
-  margin-top:clamp(56px,8vw,110px);
-  height:clamp(60px, 11vw, 180px);
-  overflow:hidden;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  pointer-events:none;
-  user-select:none;
-  /* Soft fade so the bottom edge dissolves into the footer */
-  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 72%,transparent 100%);
-  mask-image:linear-gradient(180deg,#000 0%,#000 72%,transparent 100%);
-}
-.footer-wordmark span{
-  display:block;
-  font-family:var(--font-sans);
-  font-weight:700;
-  font-size:clamp(3.5rem, 18vw, 20rem);
-  letter-spacing:-.06em;
-  line-height:.8;
-  color:#fff;
-  white-space:nowrap;
-  padding-inline:var(--pad);
-  text-align:center;
-  will-change:transform;
-}
-
-/* Mobile: no clipping, no fade — show the wordmark cleanly */
-@media (max-width:767px){
-  .footer-wordmark{
-    height:auto;
-    overflow:visible;
-    margin-top:clamp(32px,6vw,56px);
-    margin-bottom:clamp(20px,4vw,36px);
-    -webkit-mask-image:none;
-    mask-image:none;
-  }
-  .footer-wordmark span{
-    font-size:clamp(2.6rem, 15vw, 5rem);
-    white-space:normal;
-    line-height:.85;
-    letter-spacing:-.055em;
-  }
-}
 /* 404 */
 .error-page{min-height:100svh;display:flex;flex-direction:column;
   align-items:center;justify-content:center;text-align:center;
@@ -730,6 +678,19 @@ body.ready .scroll-cue{opacity:1}
 .divider{height:1px;background:var(--line-light);margin-block:clamp(40px,6vw,80px)}
 .section--dark .divider{background:var(--line-dark)}
 
+/* Founder photo — fills the portrait frame */
+.portrait img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 25%;
+}
+.portrait--photo::after{
+  background:linear-gradient(180deg, transparent 55%, rgba(8,8,8,.55) 100%);
+}
+
 /* Responsive */
 @media (max-width:1180px){
   .nav-links>li>a{padding:9px 10px;font-size:.8rem}
@@ -738,7 +699,6 @@ body.ready .scroll-cue{opacity:1}
   .sec-head,.split{grid-template-columns:1fr;gap:28px;align-items:start}
   .stats{grid-template-columns:repeat(2,1fr);gap:32px 24px}
   .podcast-grid,.feature{grid-template-columns:1fr;gap:40px}
-  .footer-top{grid-template-columns:repeat(2,1fr);gap:40px 28px}
   .work-grid{grid-template-columns:repeat(2,1fr)}
   .project,.project--wide{grid-column:span 1}
   .project--wide .project-media{aspect-ratio:4/5}
@@ -802,10 +762,6 @@ body.ready .scroll-cue{opacity:1}
   .cta-band{padding-inline:10px;padding-block:40px}
   .cta-band-inner{padding:36px 22px;border-radius:24px}
   .cta-band-inner h2{font-size:clamp(1.6rem,8vw,2.4rem)}
-  .footer{padding-block:40px 24px}
-  .footer-top{grid-template-columns:1fr;gap:32px;margin-bottom:36px}
-  .footer-bottom{flex-direction:column;align-items:flex-start;
-    gap:10px;font-size:.75rem}
   .menu-panel{padding:calc(90px + env(safe-area-inset-top,0px)) 20px
     calc(30px + env(safe-area-inset-bottom,0px))}
   .menu-panel nav>a{font-size:clamp(1.3rem,6vw,1.8rem);padding:14px 0;
@@ -829,24 +785,17 @@ body.ready .scroll-cue{opacity:1}
   .mask-i{transform:none}
   .hero-mark,.scroll-cue{opacity:1;transform:none}
 }
-/* Founder photo — fills the portrait frame */
-.portrait img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center 25%;
-}
-.portrait--photo::after{
-  background:linear-gradient(180deg, transparent 55%, rgba(8,8,8,.55) 100%);
-}
-/* Footer (base) */
+
+/* ============================================================
+   FOOTER (keep this block LAST so it wins over earlier rules)
+   ============================================================ */
 .footer{
-  border-top:1px solid rgba(255,255,255,.08);
-  padding-block:clamp(52px,7vw,84px) 0;
   background:var(--black);
   color:#fff;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:clamp(52px,7vw,84px);
+  padding-bottom:0;
+  overflow:hidden;
 }
 .footer-top{
   display:grid;
@@ -855,89 +804,49 @@ body.ready .scroll-cue{opacity:1}
   margin-bottom:clamp(48px,6vw,72px);
 }
 .footer-brand .brand{margin-bottom:18px;color:#fff}
-.footer-brand p{
-  font-size:.88rem;
-  color:rgba(255,255,255,.55);
-  line-height:1.65;
-  max-width:34ch;
-}
+.footer-brand p{font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.65;max-width:34ch}
 .footer-col h4{
-  font-size:.68rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.42);
-  font-weight:600;
-  margin-bottom:18px;
+  font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.42);font-weight:600;margin-bottom:18px;
 }
 .footer-col li+li{margin-top:11px}
 .footer-col a{
-  font-size:.88rem;
-  color:rgba(255,255,255,.75);
+  font-size:.88rem;color:rgba(255,255,255,.75);display:inline-block;
   transition:color .3s var(--ease-soft);
-  display:inline-block;
 }
 .footer-col a:hover{color:#fff}
 .footer-bottom{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
-  padding-top:30px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;padding-top:30px;
   border-top:1px solid rgba(255,255,255,.08);
-  font-size:.78rem;
-  color:rgba(255,255,255,.42);
+  font-size:.78rem;color:rgba(255,255,255,.42);
 }
-.footer-tag{
-  font-weight:500;
-  letter-spacing:.02em;
-  color:rgba(255,255,255,.7);
-}
-/* ============================================================
-   OVERSIZED WORDMARK FOOTER
-   ============================================================ */
-.footer{padding-bottom:0}
+.footer-tag{font-weight:500;letter-spacing:.02em;color:rgba(255,255,255,.7)}
 
+/* Oversized wordmark: SVG scales to exact width, never clips */
 .footer-wordmark{
-  position:relative;
-  margin-top:clamp(56px,8vw,110px);
-  height:clamp(60px, 11vw, 180px);
-  overflow:hidden;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
+  margin-top:clamp(40px,7vw,96px);
+  padding-inline:var(--pad);
+  line-height:0;
   pointer-events:none;
   user-select:none;
-  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 72%,transparent 100%);
-  mask-image:linear-gradient(180deg,#000 0%,#000 72%,transparent 100%);
+  -webkit-mask-image:linear-gradient(180deg,#000 35%,rgba(0,0,0,.08) 100%);
+  mask-image:linear-gradient(180deg,#000 35%,rgba(0,0,0,.08) 100%);
 }
-.footer-wordmark span{
-  display:block;
+.footer-wordmark svg{display:block;width:100%;height:auto;overflow:visible}
+.footer-wordmark text{
+  fill:#fff;
   font-family:var(--font-sans);
   font-weight:700;
-  font-size:clamp(3.5rem, 18vw, 20rem);
-  letter-spacing:-.06em;
-  line-height:.8;
-  color:#fff;
-  white-space:nowrap;
-  padding-inline:var(--pad);
-  text-align:center;
-  will-change:transform;
+  text-rendering:geometricPrecision;
 }
 
+@media (max-width:1024px){
+  .footer-top{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 28px}
+}
 @media (max-width:767px){
-  .footer-wordmark{
-    height:auto;
-    overflow:visible;
-    margin-top:clamp(32px,6vw,56px);
-    margin-bottom:clamp(20px,4vw,36px);
-    -webkit-mask-image:none;
-    mask-image:none;
-  }
-  .footer-wordmark span{
-    font-size:clamp(2.6rem, 15vw, 5rem);
-    white-space:normal;
-    line-height:.85;
-    letter-spacing:-.055em;
-  }
+  .footer{padding-top:40px}
+  .footer-top{grid-template-columns:1fr;gap:32px;margin-bottom:36px}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:10px;font-size:.75rem}
+  .footer-wordmark{margin-top:32px;padding-inline:20px}
 }
